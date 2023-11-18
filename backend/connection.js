@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 dotenv.config();
 
-const url = "mongodb+srv://aadyaverma2122:12345@cluster0.n1mgwtt.mongodb.net/handicraftdata?retryWrites=true&w=majority"
+const url = "mongodb+srv://aadyaverma2122:12345@cluster0.n1mgwtt.mongodb.net/officespacesdata?retryWrites=true&w=majority"
 
 
 // console.log(process.env.DB_URL);

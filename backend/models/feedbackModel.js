@@ -1,7 +1,7 @@
-const {Schema,model}=require('../connection');
+const {Schema,model,Types}=require('../connection');
 
 const myschema=new Schema({
-    user:ObjectId,
+    user:{type:Types.ObjectId,ref:"users"},
     rating:Number,
     review:String,
     createdAt:Date

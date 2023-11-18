@@ -4,7 +4,7 @@ const myschema = new Schema({
     title : String,
     description : String,
     area : Number,
-    image : {type:String},
+    image : {type:String, default: 'default.jpeg'},
     cost : Number,
     services : Array,
     createdAt : Date

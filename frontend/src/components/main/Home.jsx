@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div>
 
-      <div class="h-full bg-gray-400 dark:bg-gray-900">
+      <div class="h-full bg-gray-400 dark:bg-gray-900">;;
 
         <div class="mx-auto">
           <div class="flex justify-center px-6 py-12">

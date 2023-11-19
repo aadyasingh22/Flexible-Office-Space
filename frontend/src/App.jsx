@@ -33,11 +33,11 @@ function App() {
     
       <BrowserRouter>
         <Routes>
-          <Route path='admin' element={<Admin/>} >
-            <Route path='add' element={<AddSpaces/>} />
+          <Route path='/admin' element={<Admin/>} >
+            <Route path='addspaces' element={<AddSpaces/>} />
           </Route>
           
-          <Route path='main' element={<Main/>}>
+          <Route path='/main' element={<Main/>}>
             <Route path='home' element={<Home/>} />
             <Route path='login' element={<Login/>} />
             <Route path='logout' element={<Logout/>} />
@@ -45,7 +45,7 @@ function App() {
 
           </Route>
           
-          <Route path='user' element={<User/>}>
+          <Route path='/user' element={<User/>}>
             <Route path='profile' element={<Profile/>} />
           </Route>
         </Routes>

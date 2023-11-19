@@ -9,7 +9,11 @@ import Profile from './components/user/Profile'
 import { useEffect } from 'react';
 import { gapi } from 'gapi-script'
 import Logout from './components/main/Logout'
+<<<<<<< HEAD
 import AddSpaces from './components/admin/AddSpaces'
+=======
+import Signup from './components/main/Signup'
+>>>>>>> 47f727f52e4418aa0d305d8da242e6f79c15108a
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
 
@@ -40,6 +44,8 @@ function App() {
             <Route path='home' element={<Home/>} />
             <Route path='login' element={<Login/>} />
             <Route path='logout' element={<Logout/>} />
+            <Route path='signup' element={<Signup/>} />
+
           </Route>
           
           <Route path='user' element={<User/>}>

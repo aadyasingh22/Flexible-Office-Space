@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Main from './components/main'
+import Admin from './components/admin'
 import Home from './components/main/Home'
 import Login from './components/main/Login'
 import User from './components/user'
@@ -8,7 +9,11 @@ import Profile from './components/user/Profile'
 import { useEffect } from 'react';
 import { gapi } from 'gapi-script'
 import Logout from './components/main/Logout'
+<<<<<<< HEAD
+import AddSpaces from './components/admin/AddSpaces'
+=======
 import Signup from './components/main/Signup'
+>>>>>>> 47f727f52e4418aa0d305d8da242e6f79c15108a
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
 
@@ -31,6 +36,10 @@ function App() {
     
       <BrowserRouter>
         <Routes>
+          <Route path='admin' element={<Admin/>} >
+            <Route path='add' element={<AddSpaces/>} />
+          </Route>
+          
           <Route path='main' element={<Main/>}>
             <Route path='home' element={<Home/>} />
             <Route path='login' element={<Login/>} />

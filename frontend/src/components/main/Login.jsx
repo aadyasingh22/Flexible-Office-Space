@@ -15,7 +15,8 @@ function Login() {
   }
 
   return (
-    <div id='signInButton'>
+    <div>
+      <div id='signInButton'>
       <GoogleLogin
         clientId={clientId}
         buttonText="Login"
@@ -28,6 +29,10 @@ function Login() {
         <LoginButton />
       </div> */}
     </div>
+    
+    </div>
+    
+    
   )
 
 }

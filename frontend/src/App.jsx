@@ -9,6 +9,7 @@ import Profile from './components/user/Profile'
 import { useEffect } from 'react';
 import { gapi } from 'gapi-script'
 import Logout from './components/main/Logout'
+import AddSpaces from './components/admin/AddSpaces'
 import Signup from './components/main/Signup'
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
@@ -32,11 +33,11 @@ function App() {
     
       <BrowserRouter>
         <Routes>
-          <Route path='admin' element={<Admin/>} >
-            <Route path='add' element={<AddSpaces/>} />
+          <Route path='/admin' element={<Admin/>} >
+            <Route path='addspaces' element={<AddSpaces/>} />
           </Route>
           
-          <Route path='main' element={<Main/>}>
+          <Route path='/main' element={<Main/>}>
             <Route path='home' element={<Home/>} />
             <Route path='login' element={<Login/>} />
             <Route path='logout' element={<Logout/>} />
@@ -44,7 +45,7 @@ function App() {
 
           </Route>
           
-          <Route path='user' element={<User/>}>
+          <Route path='/user' element={<User/>}>
             <Route path='profile' element={<Profile/>} />
           </Route>
         </Routes>

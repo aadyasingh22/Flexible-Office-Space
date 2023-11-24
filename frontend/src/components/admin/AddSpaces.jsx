@@ -93,25 +93,25 @@ const AddSpaces = () => {
             <form onSubmit={addForm.handleSubmit}>
                 <label className='form-label'>Title</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.title}</span>
-                <input id='title' onChange={addForm.handleChange} value={addForm.values.title} className='block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="text" />
+                <input id='title' onChange={addForm.handleChange} value={addForm.values.title} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="text" />
                 <label className='form-label'>Description</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.description}</span>
-                <input id='description' onChange={addForm.handleChange} value={addForm.values.description} className='block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="text" />
+                <input id='description' onChange={addForm.handleChange} value={addForm.values.description} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="text" />
                 <label className='form-label'>Area</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.area}</span>
-                <input id='area' onChange={addForm.handleChange} value={addForm.values.area} className='block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="number" />
+                <input id='area' onChange={addForm.handleChange} value={addForm.values.area} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="number" />
                 <label className='form-label'>Cost</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.cost}</span>
-                <input id='cost' onChange={addForm.handleChange} value={addForm.values.cost} className='block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="number" />
+                <input id='cost' onChange={addForm.handleChange} value={addForm.values.cost} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="number" />
                 <label className='form-label'>Services</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.services}</span>
-                <input id='services' onChange={addForm.handleChange} value={addForm.values.services} className='block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="text" />
+                <input id='services' onChange={addForm.handleChange} value={addForm.values.services} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="text" />
                 <label className='form-label'>Created At</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.createdat}</span>
-                <input id='createdat' onChange={addForm.handleChange} value={addForm.values.createdat} className='block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="date" />
+                <input id='createdat' onChange={addForm.handleChange} value={addForm.values.createdat} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="date" />
                 <label className='form-label'>Image</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.image}</span>
-                <input id='image' onChange={addForm.handleChange} value={addForm.values.image} className='block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="file" onChange={uploadFile} />
+                <input id='image' onChange={addForm.handleChange} value={addForm.values.image} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="file" onChange={uploadFile} />
 
                 <button className="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 w-full">Add</button>
             </form>

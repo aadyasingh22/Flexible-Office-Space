@@ -53,15 +53,15 @@ function Login() {
             <div className="mb-4">
               <label
                 className="block mb-2 text-sm font-bold text-gray-700"
-                htmlFor="username"
+                htmlFor="email"
               >
-                Username
+                Email
               </label>
               <input
                 className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                id="username"
+                id="email"
                 type="text"
-                placeholder="Username"
+                placeholder="Your Email"
               />
             </div>
             <div className="mb-4">

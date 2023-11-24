@@ -11,6 +11,7 @@ import { gapi } from 'gapi-script'
 import Logout from './components/main/Logout'
 import AddSpaces from './components/admin/AddSpaces'
 import Signup from './components/main/Signup'
+import { SnackbarProvider } from 'notistack'
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
 
@@ -30,7 +31,7 @@ function App() {
 
   return (
     <>
-    
+      <SnackbarProvider>
       <BrowserRouter>
         <Routes>
           <Route path='/admin' element={<Admin/>} >
@@ -50,7 +51,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-
+      </SnackbarProvider>
     </>
   )
 }

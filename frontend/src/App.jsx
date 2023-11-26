@@ -12,6 +12,7 @@ import Logout from './components/main/Logout'
 import AddSpaces from './components/admin/AddSpaces'
 import Signup from './components/main/Signup'
 import { SnackbarProvider } from 'notistack'
+import { AppProvider } from './context/AppContext'
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
 
@@ -32,25 +33,27 @@ function App() {
   return (
     <>
       <SnackbarProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/admin' element={<Admin/>} >
-            <Route path='addspaces' element={<AddSpaces/>} />
-          </Route>
-          
-          <Route path='/main' element={<Main/>}>
-            <Route path='home' element={<Home/>} />
-            <Route path='login' element={<Login/>} />
-            <Route path='logout' element={<Logout/>} />
-            <Route path='signup' element={<Signup/>} />
+        <BrowserRouter>
+          <AppProvider>
+            <Routes>
+              <Route path='/admin' element={<Admin />} >
+                <Route path='addspaces' element={<AddSpaces />} />
+              </Route>
 
-          </Route>
-          
-          <Route path='/user' element={<User/>}>
-            <Route path='profile' element={<Profile/>} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+              <Route path='/main' element={<Main />}>
+                <Route path='home' element={<Home />} />
+                <Route path='login' element={<Login />} />
+                <Route path='logout' element={<Logout />} />
+                <Route path='signup' element={<Signup />} />
+
+              </Route>
+
+              <Route path='/user' element={<User />}>
+                <Route path='profile' element={<Profile />} />
+              </Route>
+            </Routes>
+          </AppProvider>
+        </BrowserRouter>
       </SnackbarProvider>
     </>
   )

@@ -1,6 +1,36 @@
 import React from 'react'
 
 const Signup = () => {
+
+  const signupForm = useFormik({
+    initialValues: {
+      username: '',
+      email: '',
+      password: '',
+      confirm: ''
+    },
+
+    // onSubmit: async (values, { resetForm }) => {
+    //   console.log(values);
+    //   resetForm();
+
+    //   const res = await fetch('http://localhost:5000/user/add', {
+    //     method : 'POST',
+    //     body : JSON.stringify(values),
+    //     headers : {
+    //       'Content-Type' : 'application/json'
+    //     }
+    //   });
+
+    //   console.log(res.status);
+      
+
+    //   // send values to backend
+    // },
+
+    validationSchema: SignupSchema
+  });
+
     return (
         <div className="h-full bg-gray-400 dark:bg-gray-900">
   <div className="mx-auto">

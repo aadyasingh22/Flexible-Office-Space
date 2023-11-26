@@ -6,6 +6,8 @@ const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleuserc
 
 function Login() {
 
+  const { setLoggedIn } =useAppContext();
+
   const onSuccess = (res) => {
     console.log("LOGIN SUCCESS! Current user: ", res.profileObj);
   }

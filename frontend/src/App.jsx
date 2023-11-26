@@ -12,11 +12,7 @@ import Logout from './components/main/Logout'
 import AddSpaces from './components/admin/AddSpaces'
 import Signup from './components/main/Signup'
 import { SnackbarProvider } from 'notistack'
-<<<<<<< HEAD
 import { AppProvider } from './context/AppContext'
-=======
-import AboutUs from './components/main/AboutUs'
->>>>>>> 2babc9c0f98ec23e295d6399667512d216ced362
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
 
@@ -37,27 +33,12 @@ function App() {
   return (
     <>
       <SnackbarProvider>
-<<<<<<< HEAD
         <BrowserRouter>
           <AppProvider>
             <Routes>
               <Route path='/admin' element={<Admin />} >
                 <Route path='addspaces' element={<AddSpaces />} />
               </Route>
-=======
-      <BrowserRouter>
-        <Routes>
-          <Route path='/admin' element={<Admin/>} >
-            <Route path='addspaces' element={<AddSpaces/>} />
-          </Route>
-          
-          <Route path='/main' element={<Main/>}>
-            <Route path='home' element={<Home/>} />
-            <Route path='login' element={<Login/>} />
-            <Route path='logout' element={<Logout/>} />
-            <Route path='signup' element={<Signup/>} />
-            <Route path='aboutus' element={<AboutUs/>} />
->>>>>>> 2babc9c0f98ec23e295d6399667512d216ced362
 
               <Route path='/main' element={<Main />}>
                 <Route path='home' element={<Home />} />

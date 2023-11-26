@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import AboutUs from './AboutUs'
 
 const Navbar = () => {
   return (
@@ -50,9 +51,9 @@ const Navbar = () => {
         </svg>
       </li>
       <li>
-        <a className="text-sm text-gray-400 hover:text-gray-500" href="#">
+        <Link to={'aboutus'} className="text-sm text-gray-400 hover:text-gray-500" href="#">
           About Us
-        </a>
+        </Link>
       </li>
       <li className="text-gray-300">
         <svg

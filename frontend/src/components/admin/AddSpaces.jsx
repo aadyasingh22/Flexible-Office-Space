@@ -111,7 +111,7 @@ const AddSpaces = () => {
                 <input id='createdat' onChange={addForm.handleChange} value={addForm.values.createdat} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="date" />
                 <label className='form-label'>Image</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.image}</span>
-                <input id='image' onChange={addForm.handleChange} value={addForm.values.image} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="file" onChange={uploadFile} />
+                <input id='image' value={addForm.values.image} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="file" onChange={uploadFile} />
 
                 <button className="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600 w-full">Add</button>
             </form>

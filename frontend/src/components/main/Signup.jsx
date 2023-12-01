@@ -1,4 +1,22 @@
-import React from 'react'
+import { useFormik } from 'formik';
+import React from 'react';
+import * as Yup from 'yup';
+
+const SignupSchema = Yup.object().shape({
+  firstName: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  lastName: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  email: Yup.string().email('Invalid email').required('Required'),
+  password: Yup.string().required('Password is required')
+    .matches('^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).+$', 'Password is invalid'),
+  c_password: Yup.string()
+    .oneOf([Yup.ref('password'), null], 'Passwords must match')
+});
 
 const Signup = () => {
 
@@ -10,23 +28,40 @@ const Signup = () => {
       confirm: ''
     },
 
-    // onSubmit: async (values, { resetForm }) => {
-    //   console.log(values);
-    //   resetForm();
+    onSubmit: async (values, { resetForm }) => {
+      console.log(values);
+      resetForm();
 
-    //   const res = await fetch('http://localhost:5000/user/add', {
-    //     method : 'POST',
-    //     body : JSON.stringify(values),
-    //     headers : {
-    //       'Content-Type' : 'application/json'
-    //     }
-    //   });
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/user/add`, {
+        method : 'POST',
+        body : JSON.stringify(values),
+        headers : {
+          'Content-Type' : 'application/json'
+        }
+      });
 
-    //   console.log(res.status);
+      console.log(res.status);
+      if (res.status === 200) {
+        enqueueSnackbar('Signup successful', {
+            variant: 'success',
+            anchorOrigin: {
+                horizontal: 'center',
+                vertical: 'top'
+            }
+        })
+    } else {
+        enqueueSnackbar('Something went wrong', {
+            variant: 'error',
+            anchorOrigin: {
+                horizontal: 'center',
+                vertical: 'top'
+            }
+        })
+    }
       
 
     //   // send values to backend
-    // },
+    },
 
     validationSchema: SignupSchema
   });
@@ -47,7 +82,7 @@ const Signup = () => {
           <h3 className="py-4 text-2xl text-center text-gray-800 dark:text-white">
             Create an Account!
           </h3>
-          <form className="px-8 pt-6 pb-8 mb-4 bg-white dark:bg-gray-800 rounded">
+          <form className="px-8 pt-6 pb-8 mb-4 bg-white dark:bg-gray-800 rounded" onSubmit={signupForm.handleSubmit}>
             <div className="mb-4 md:flex md:justify-between">
               <div className="mb-4 md:mr-2 md:mb-0">
                 <label
@@ -59,6 +94,7 @@ const Signup = () => {
                 <input
                   className="w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="firstName"
+                  onChange={signupForm.handleChange} value={signupForm.values.firstName}
                   type="text"
                   placeholder="First Name"
                 />
@@ -73,6 +109,7 @@ const Signup = () => {
                 <input
                   className="w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="lastName"
+                  onChange={signupForm.handleChange} value={signupForm.values.lastName}
                   type="text"
                   placeholder="Last Name"
                 />
@@ -88,6 +125,7 @@ const Signup = () => {
               <input
                 className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                 id="email"
+                onChange={signupForm.handleChange} value={signupForm.values.email}
                 type="email"
                 placeholder="Email"
               />
@@ -103,6 +141,7 @@ const Signup = () => {
                 <input
                   className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="password"
+                  onChange={signupForm.handleChange} value={signupForm.values.password}
                   type="password"
                   placeholder="******************"
                 />
@@ -120,6 +159,7 @@ const Signup = () => {
                 <input
                   className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="c_password"
+                  onChange={signupForm.handleChange} value={signupForm.values.c_password}
                   type="password"
                   placeholder="******************"
                 />

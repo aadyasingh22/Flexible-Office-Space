@@ -1,12 +1,35 @@
 import React from 'react'
 import { GoogleLogin } from 'react-google-login';
 import LoginButton from 'react-google-login'
+import useAppContext from '../../context/AppContext';
+import { useFormik } from 'formik';
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
 
 function Login() {
 
   const { setLoggedIn } =useAppContext();
+
+  const loginForm = useFormik({
+    initialValues: {
+      email: '',
+      password: ''
+    },
+    onSubmit: async (values) => {
+      console.log(values);
+
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/user/authenticate`, {
+        method : 'POST',
+        body : JSON.stringify(values),
+        headers : {
+          'Content-Type' : 'application/json'
+        }
+      });
+
+      console.log(res.status);
+
+    }
+  });
 
   const onSuccess = (res) => {
     console.log("LOGIN SUCCESS! Current user: ", res.profileObj);

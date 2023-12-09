@@ -114,9 +114,9 @@ const Navbar = () => {
               </svg>
             </li>
             <li>
-              <a className="text-sm text-gray-400 hover:text-gray-500" href="#">
+              <Link to={'contactus'} className="text-sm text-gray-400 hover:text-gray-500" href="#">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
           <Link to={'login'}

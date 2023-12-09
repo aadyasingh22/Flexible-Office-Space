@@ -28,7 +28,7 @@ const Navbar = () => {
               </svg>
             </button>
           </div>
-          <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+          <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
             <li>
               <a className="text-sm text-gray-400 hover:text-gray-500" href="#">
                 Home
@@ -208,7 +208,7 @@ const Navbar = () => {
             <div className="mt-auto">
               <div className="pt-6">
                 <a
-                  className="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl"
+                  className="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold bg-gray-50 hover:bg-gray-100 rounded-xl"
                   href="#"
                 >
                   Sign in

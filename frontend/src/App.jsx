@@ -14,6 +14,8 @@ import Signup from './components/main/Signup'
 import { SnackbarProvider } from 'notistack'
 import { AppProvider } from './context/AppContext'
 import AboutUs from './components/main/AboutUs'
+import ContactUs from './components/main/ContactUs'
+import Navbar from './components/admin/Navbar'
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
 
@@ -47,6 +49,7 @@ function App() {
                 <Route path='logout' element={<Logout />} />
                 <Route path='signup' element={<Signup />} />
                 <Route path='aboutus' element={<AboutUs />} />
+                <Route path='contactus' element={<ContactUs />} />
 
               </Route>
 

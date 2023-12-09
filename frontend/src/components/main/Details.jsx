@@ -19,19 +19,19 @@ const Details = () => {
 
   const displayOffice = () => {
     if(officeData!==null){
-      return <div className='container'>
-        <div className="row">
-          <div className="col-md-4">
-            <img className='img-fluid' src={`${import.meta.env.VITE_BACKEND_URL}`+officeData.image} alt="" />
-          </div>
-          <div className="col-md-8">
-            <h1>{officeData.title}</h1>
-            <h1>{officeData.description}</h1>
-            <h1>{officeData.area}</h1>
-            <h1>{officeData.services}</h1>
-          </div>
+      return <div className='container mx-auto sm:px-4'>
+      <div className="flex flex-wrap ">
+        <div className="md:w-1/3 pr-4 pl-4">
+          <img className='max-w-full h-auto' src={`${import.meta.env.VITE_BACKEND_URL}`+officeData.image} alt="" />
+        </div>
+        <div className="md:w-2/3 pr-4 pl-4">
+          <h1>{officeData.title}</h1>
+          <h1>{officeData.description}</h1>
+          <h1>{officeData.area}</h1>
+          <h1>{officeData.services}</h1>
         </div>
       </div>
+    </div>
     }else{
       return <h1>Loading ...</h1>
     }

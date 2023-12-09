@@ -27,7 +27,7 @@ const BrowseSpaces = () => {
           {spaceList.map((space) => (
             <div className="md:w-1/4 pr-4 pl-4">
               <div className="relative flex flex-col min-w-0 rounded break-words border bg-white border-1 border-gray-300 mx-auto my-5" style={{ overflow: 'hidden' }}>
-                {/* <img src={"http://localhost:5000/"+space.image} alt="" className='my-card-img' /> */}
+                <img src={`${import.meta.env.VITE_BACKEND_URL}`+space.image} alt="" className='my-card-img' />
 
                 <div className="flex-auto p-6">
 

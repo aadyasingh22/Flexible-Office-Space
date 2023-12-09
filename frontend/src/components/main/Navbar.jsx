@@ -72,9 +72,9 @@ const Navbar = () => {
               </svg>
             </li>
             <li>
-              <a className="text-sm text-gray-400 hover:text-gray-500" href="#">
-                Services
-              </a>
+              <Link to={'browsespaces'} className="text-sm text-gray-400 hover:text-gray-500" href="#">
+                Browse Spaces
+              </Link>
             </li>
             <li className="text-gray-300">
               <svg
@@ -184,7 +184,7 @@ const Navbar = () => {
                     className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
                     href="#"
                   >
-                    Services
+                    Browse Spaces
                   </a>
                 </li>
                 <li className="mb-1">

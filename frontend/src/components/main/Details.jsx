@@ -26,6 +26,9 @@ const Details = () => {
           </div>
           <div className="col-md-8">
             <h1>{officeData.title}</h1>
+            <h1>{officeData.description}</h1>
+            <h1>{officeData.area}</h1>
+            <h1>{officeData.services}</h1>
           </div>
         </div>
       </div>

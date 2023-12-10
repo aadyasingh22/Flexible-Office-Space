@@ -20,12 +20,12 @@ const Details = () => {
   const displayOffice = () => {
     if(officeData!==null){
       return <div className='container mx-auto sm:px-4'>
-      <div className="flex flex-wrap ">
-        <div className="md:w-1/3 pr-4 pl-4">
-          <img className='max-w-full h-auto' src={`${import.meta.env.VITE_BACKEND_URL}`+officeData.image} alt="" />
+      <div className="grid grid-cols-2 gap-6">
+        <div>
+          <img className='max-w-full h-auto' src={`${import.meta.env.VITE_BACKEND_URL}/`+officeData.image} alt="" />
         </div>
         <div className="md:w-2/3 pr-4 pl-4">
-          <h1>{officeData.title}</h1>
+          <h1 className='font-bold text-5xl py-5'>{officeData.title}</h1>
           <h1>{officeData.description}</h1>
           <h1>{officeData.area}</h1>
           <h1>{officeData.services}</h1>

@@ -27,7 +27,7 @@ const BrowseSpaces = () => {
           {spaceList.map((space) => (
             <div className="md:w-1/4 pr-4 pl-4">
               <div className="relative flex flex-col min-w-0 rounded break-words border bg-white border-1 border-gray-300 mx-auto my-5" style={{ overflow: 'hidden' }}>
-                <img src={`${import.meta.env.VITE_BACKEND_URL}`+space.image} alt="" className='my-card-img' />
+                <img src={`${import.meta.env.VITE_BACKEND_URL}/`+space.image} alt="" className='my-card-img' />
 
                 <div className="flex-auto p-6">
 
@@ -37,7 +37,7 @@ const BrowseSpaces = () => {
                   <h4>{space.services}</h4>
                   <h3>₨ {space.cost}</h3>
 
-                  <Link to={'/main/details/'+space._id} className="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600">Add to Cart</Link>
+                  <Link to={'/main/details/'+space._id} className="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600">Get all Details</Link>
 
                 </div>
 

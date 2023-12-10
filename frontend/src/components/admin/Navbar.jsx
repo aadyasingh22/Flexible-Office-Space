@@ -75,9 +75,9 @@ const Navbar = () => {
                 Manage User
               </Link>
             </li>
-            
-            
-            
+
+
+
           </ul>
         </nav>
         <div className="navbar-menu relative z-50 hidden">
@@ -135,13 +135,18 @@ const Navbar = () => {
                     Manage User
                   </a>
                 </li>
-                
-              </ul>
-            </div>
-            
 
-        
+
+              </ul>
+
+            </div>
+
+
+
+
+
           </nav>
+
         </div>
       </>
 

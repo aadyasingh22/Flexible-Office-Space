@@ -20,6 +20,7 @@ import UpdateSpaces from './components/admin/UpdateSpaces'
 import Details from './components/main/Details'
 import ManageUser from './components/admin/ManageUser'
 import ContactUs from './components/main/ContactUs'
+import ResetPassword from './components/main/ResetPassword'
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
 
@@ -59,6 +60,7 @@ function App() {
                 <Route path='contactus' element={<ContactUs />} />
                 <Route path='browsespaces' element={<BrowseSpaces />} />
                 <Route path='details/:id' element={<Details />} />
+                <Route path='resetpassword' element={<ResetPassword />} />
 
               </Route>
 

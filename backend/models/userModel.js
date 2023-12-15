@@ -5,7 +5,10 @@ const myschema=new Schema({
     email: {type:String,require:true,unique:true},
     password:{type:String,require:true},
     avatar:{type:String, default: 'default.jpeg'},
-    createdAt:Date
+    createdAt:Date,
+    email_verified: {type:Boolean,default:false}
 });
+
+
 
 module.exports=model('users',myschema)

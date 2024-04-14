@@ -1,4 +1,5 @@
 import { useFormik } from 'formik';
+import { enqueueSnackbar } from 'notistack';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
@@ -23,10 +24,11 @@ const Signup = () => {
 
   const signupForm = useFormik({
     initialValues: {
-      username: '',
+      firstName: '',
+      lastName: '',
       email: '',
       password: '',
-      confirm: ''
+      c_password: ''
     },
 
     onSubmit: async (values, { resetForm }) => {
@@ -60,7 +62,6 @@ const Signup = () => {
         })
     }
       
-
     // send values to backend
     },
 
@@ -92,6 +93,7 @@ const Signup = () => {
                 >
                   First Name
                 </label>
+                <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{signupForm.errors.firstName}</span>
                 <input
                   className="w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="firstName"
@@ -107,6 +109,7 @@ const Signup = () => {
                 >
                   Last Name
                 </label>
+                <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{signupForm.errors.lastName}</span>
                 <input
                   className="w-full px-3 py-2 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="lastName"
@@ -123,6 +126,7 @@ const Signup = () => {
               >
                 Email
               </label>
+              <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{signupForm.errors.email}</span>
               <input
                 className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                 id="email"
@@ -139,16 +143,14 @@ const Signup = () => {
                 >
                   Password
                 </label>
+                <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{signupForm.errors.password}</span>
                 <input
-                  className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border border-red-500 rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                  className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="password"
                   onChange={signupForm.handleChange} value={signupForm.values.password}
                   type="password"
                   placeholder="******************"
                 />
-                <p className="text-xs italic text-red-500">
-                  Please choose a password.
-                </p>
               </div>
               <div className="md:ml-2">
                 <label
@@ -157,6 +159,7 @@ const Signup = () => {
                 >
                   Confirm Password
                 </label>
+                <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{signupForm.errors.c_password}</span>
                 <input
                   className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 dark:text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                   id="c_password"
@@ -169,7 +172,7 @@ const Signup = () => {
             <div className="mb-6 text-center">
               <button
                 className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-900 focus:outline-none focus:shadow-outline"
-                type="button"
+                type="submit"
               >
                 Register Account
               </button>

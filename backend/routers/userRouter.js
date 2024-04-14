@@ -19,7 +19,7 @@ router.post('/add',(req,res)=>{
     });
 
 });
-router.get('/getall', verifyToken, (req,res)=>{
+router.get('/getall', (req,res)=>{
     Model.find({})
     .then((result) => {
         res.json(result);
@@ -56,7 +56,7 @@ router.put('/update/:id',(req,res)=>{
         res.json(err);
     });
 });
-router.get('/delete',(req,res)=>{
+router.get('/delete/:id',(req,res)=>{
     Model.findByIdAndDelete(req.params.id)
     .then((result) => {
         res.json(result);

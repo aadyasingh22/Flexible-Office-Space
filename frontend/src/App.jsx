@@ -21,6 +21,7 @@ import Details from './components/main/Details'
 import ManageUser from './components/admin/ManageUser'
 import ContactUs from './components/main/ContactUs'
 import ResetPassword from './components/main/ResetPassword'
+import UpdateUser from './components/admin/UpdateUser'
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
 
@@ -48,7 +49,8 @@ function App() {
                 <Route path='addspaces' element={<AddSpaces />} />
                 <Route path='managespaces' element={<ManageSpaces />} />
                 <Route path='updatespaces/:id' element={<UpdateSpaces />} />
-                <Route path='manageuser' element={<ManageUser />} />
+                <Route path='manageusers' element={<ManageUser />} />
+                <Route path='updateusers/:id' element={<UpdateUser />} />
               </Route>
 
               <Route path='/main' element={<Main />}>

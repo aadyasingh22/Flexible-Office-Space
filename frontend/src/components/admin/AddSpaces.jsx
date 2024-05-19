@@ -27,6 +27,9 @@ const AddSpaces = () => {
             title: '',
             description: '',
             area: '',
+            furnishingStatus: '',
+            parking: '',
+            washroom: '',
             cost: '',
             services: '',
             createdat: ''
@@ -94,12 +97,24 @@ const AddSpaces = () => {
                 <label className='form-label'>Title</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.title}</span>
                 <input id='title' onChange={addForm.handleChange} value={addForm.values.title} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="text" />
+                <label className='form-label'>Location</label>
+                <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.location}</span>
+                <input id='location' onChange={addForm.handleChange} value={addForm.values.location} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="text" />
                 <label className='form-label'>Description</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.description}</span>
                 <input id='description' onChange={addForm.handleChange} value={addForm.values.description} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="text" />
                 <label className='form-label'>Area</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.area}</span>
                 <input id='area' onChange={addForm.handleChange} value={addForm.values.area} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="number" />
+                <label className='form-label'>Furnishing Status</label>
+                <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.furnishingStatus}</span>
+                <input id='furnishingStatus' onChange={addForm.handleChange} value={addForm.values.furnishingStatus} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="text" />
+                <label className='form-label'>Parking</label>
+                <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.parking}</span>
+                <input id='parking' onChange={addForm.handleChange} value={addForm.values.parking} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="text" />
+                <label className='form-label'>Washrooms</label>
+                <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.washroom}</span>
+                <input id='washroom' onChange={addForm.handleChange} value={addForm.values.washroom} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="number" />
                 <label className='form-label'>Cost</label>
                 <span style={{ fontSize: 10, marginLeft: 10, color: 'red' }}>{addForm.errors.cost}</span>
                 <input id='cost' onChange={addForm.handleChange} value={addForm.values.cost} className='block appearance-none w-full py-1 px-2 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded mb-3' type="number" />

@@ -49,6 +49,9 @@ const ManageSpaces = () => {
                             <th>Title</th>
                             <th>Description</th>
                             <th>Area</th>
+                            <th>Furnishing Status</th>
+                            <th>Parking</th>
+                            <th>Washrooms</th>
                             <th>Cost</th>
                             <th>Services</th>
                             <th>Created At</th>
@@ -62,8 +65,12 @@ const ManageSpaces = () => {
                                     <td>{index + 1}</td>
                                     <td>{space._id}</td>
                                     <td>{space.title}</td>
+                                    <td>{space.location}</td>
                                     <td>{space.description}</td>
                                     <td>{space.area}</td>
+                                    <td>{space.furnishingStatus}</td>
+                                    <td>{space.parking}</td>
+                                    <td>{space.washroom}</td>
                                     <td>{space.cost}</td>
                                     <td>{space.services}</td>
                                     <td>{space.createdat}</td>

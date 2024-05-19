@@ -22,6 +22,7 @@ import ManageUser from './components/admin/ManageUser'
 import ContactUs from './components/main/ContactUs'
 import ResetPassword from './components/main/ResetPassword'
 import UpdateUser from './components/admin/UpdateUser'
+import BookingPage from './components/user/BookingPage'
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
 
@@ -68,6 +69,7 @@ function App() {
 
               <Route path='/user' element={<User />}>
                 <Route path='profile' element={<Profile />} />
+                <Route path='bookingpage' element={<BookingPage />} />
               </Route>
             </Routes>
           </AppProvider>

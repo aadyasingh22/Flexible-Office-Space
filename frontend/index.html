@@ -5,6 +5,9 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Swiper React</title>
   </head>
   <body>
     <div id="root"></div>
@@ -20,7 +23,20 @@
   s1.setAttribute('crossorigin','*');
   s0.parentNode.insertBefore(s1,s0);
   })();
+  var mySwiper = new Swiper('.swiper-5', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    loop: true,
+    autoplay: {
+      delay: 300,
+      disableOnInteraction: true,
+  },
+  });
   </script>
   <!--End of Tawk.to Script-->
+  <div id="app"></div>
+        <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

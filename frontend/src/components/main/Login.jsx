@@ -30,21 +30,21 @@ function Login() {
       console.log(res.status);
       if (res.status === 200) {
         enqueueSnackbar('Signin successful', {
-            variant: 'success',
-            anchorOrigin: {
-                horizontal: 'center',
-                vertical: 'top'
-            }
+          variant: 'success',
+          anchorOrigin: {
+            horizontal: 'center',
+            vertical: 'top'
+          }
         })
-    } else {
+      } else {
         enqueueSnackbar('Something went wrong', {
-            variant: 'error',
-            anchorOrigin: {
-                horizontal: 'center',
-                vertical: 'top'
-            }
+          variant: 'error',
+          anchorOrigin: {
+            horizontal: 'center',
+            vertical: 'top'
+          }
         })
-    }
+      }
 
     }
   });
@@ -80,7 +80,7 @@ function Login() {
                 {/* Col */}
                 <div className="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
                   <h3 className="pt-4 text-2xl text-center">Sign In to Your Account!</h3>
-                  <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+                  <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded" onSubmit={loginForm.handleSubmit}>
                     <div className="mb-4">
                       <label
                         className="block mb-2 text-sm font-bold text-gray-700"
@@ -91,6 +91,7 @@ function Login() {
                       <input
                         className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                         id="email"
+                        onChange={loginForm.handleChange} value={loginForm.values.email}
                         type="text"
                         placeholder="Your Email"
                       />
@@ -105,6 +106,7 @@ function Login() {
                       <input
                         className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                         id="password"
+                        onChange={loginForm.handleChange} value={loginForm.values.password}
                         type="password"
                         placeholder="******************"
                       />
@@ -164,14 +166,12 @@ function Login() {
             </div>
           </div>
         </>
-
       </div>
-
     </div>
 
 
-  )
+        )
 
 }
 
-export default Login;
+        export default Login;

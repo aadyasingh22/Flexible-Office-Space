@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Main from './components/main'
 import Admin from './components/admin'
@@ -44,6 +44,7 @@ function App() {
         <BrowserRouter>
           <AppProvider>
             <Routes>
+              <Route path='/' element={<Navigate to="/main/home" />} />
               <Route path='/admin' element={<Admin />} >
                 <Route path='addspaces' element={<AddSpaces />} />
                 <Route path='managespaces' element={<ManageSpaces />} />

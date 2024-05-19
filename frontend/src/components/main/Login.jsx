@@ -74,7 +74,7 @@ function Login() {
         {/* Col */}
         <div className="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
           <h3 className="pt-4 text-2xl text-center">Sign In to Your Account!</h3>
-          <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded">
+          <form className="px-8 pt-6 pb-8 mb-4 bg-white rounded" onSubmit={loginForm.handleSubmit}>
             <div className="mb-4">
               <label
                 className="block mb-2 text-sm font-bold text-gray-700"

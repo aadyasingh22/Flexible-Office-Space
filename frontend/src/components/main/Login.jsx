@@ -4,6 +4,7 @@ import LoginButton from 'react-google-login'
 import useAppContext from '../../context/AppContext';
 import { useFormik } from 'formik';
 import { enqueueSnackbar } from 'notistack';
+import { useNavigate } from 'react-router-dom';
 
 const clientId = "687782592869-s1u1pnos5oo1hcdqevpcrg03qtcsvs8o.apps.googleusercontent.com";
 
@@ -11,12 +12,14 @@ function Login() {
 
   const { setLoggedIn } = useAppContext();
 
+  const navigate = useNavigate();
+
   const loginForm = useFormik({
     initialValues: {
       email: '',
       password: ''
     },
-    onSubmit: async (values) => {
+    onSubmit: async (values, {resetForm}) => {
       console.log(values);
 
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/user/authenticate`, {
@@ -36,6 +39,13 @@ function Login() {
             vertical: 'top'
           }
         })
+        const data = await res.json();
+        console.log(data);
+        sessionStorage.setItem('user', JSON.stringify(data));
+        resetForm();
+
+        navigate('/main/browsespaces');
+
       } else {
         enqueueSnackbar('Something went wrong', {
           variant: 'error',

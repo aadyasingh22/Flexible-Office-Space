@@ -70,7 +70,7 @@ function App() {
 
               <Route path='/user' element={<User />}>
                 <Route path='profile' element={<Profile />} />
-                <Route path='bookingpage' element={<BookingPage />} />
+                <Route path='bookingpage/:id' element={<BookingPage />} />
               </Route>
             </Routes>
           </AppProvider>

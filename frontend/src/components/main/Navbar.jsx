@@ -1,8 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import AboutUs from './AboutUs'
+import useAppContext from '../../context/AppContext'
 
 const Navbar = () => {
+
+  const { loggedIn, logout } = useAppContext();
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+
+  const showLoginOption = () => {
+    if (loggedIn) {
+      return (
+        <img className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={'http://localhost:5000/' + currentUser.avatar} alt="Bordered avatar" />
+      )
+    } else {
+      return <>
+        <Link to={'login'}
+          className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200"
+          href="#"
+        >
+          Sign In
+        </Link>
+        <Link to={'signup'}
+          className="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
+          href="#"
+        >
+          Sign up
+        </Link>
+      </>
+    }
+  }
+
   return (
     <div>
       <>
@@ -119,18 +146,9 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-          <Link to={'login'}
-            className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold  rounded-xl transition duration-200"
-            href="#"
-          >
-            Sign In
-          </Link>
-          <Link to={'signup'}
-            className="hidden lg:inline-block py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
-            href="#"
-          >
-            Sign up
-          </Link>
+
+          {showLoginOption()}
+
         </nav>
         <div className="navbar-menu relative z-50 hidden">
           <div className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25" />

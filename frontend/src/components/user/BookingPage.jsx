@@ -8,7 +8,7 @@ const BookingPage = () => {
 
   return (
     <div>
-
+      
     </div>
   )
 }

@@ -42,6 +42,7 @@ function Login() {
         const data = await res.json();
         console.log(data);
         sessionStorage.setItem('user', JSON.stringify(data));
+        setLoggedIn(true)
         resetForm();
 
         navigate('/main/browsespaces');

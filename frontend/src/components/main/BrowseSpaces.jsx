@@ -14,17 +14,24 @@ const BrowseSpaces = () => {
   }
 
   useEffect(() => {
-
     //when component opens
     getSpaceData();
   }, [])
 
+  const slicer = (str, maxSize) => {
+    if(str.length > maxSize){
+      return str.slice(0, maxSize) + '...'
+    }else{
+      return str
+    }
+  }
+
   return (
     <div>
       <div className="container mx-auto sm:px-4">
-        <div>
+        <div className='grid grid-cols-4'>
           {spaceList.map((space) => (
-            <div className="md:w-1/4 pr-4 pl-4">
+            <div className=" pr-4 pl-4">
               <div className=" flex flex-col min-w-0 rounded break-words border bg-white border-1 border-gray-300 mx-auto my-5" style={{ overflow: 'hidden' }}>
                 <img src={`${import.meta.env.VITE_BACKEND_URL}/` + space.image} alt="" className='my-card-img' />
 
@@ -38,7 +45,7 @@ const BrowseSpaces = () => {
                       📍{space.location}
                     </h5>
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                      {space.description}
+                      {slicer(space.description, 25)}
                     </h5>
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                       {space.area}
@@ -102,12 +109,11 @@ const BrowseSpaces = () => {
                       ₹{space.cost}
                     </span>
 
-                    <a
-                      href="#"
+                    <Link to={'/main/details/' + space._id}
                       className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
                       Get All Details
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

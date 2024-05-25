@@ -16,7 +16,7 @@ export const AppProvider = ({children}) => {
     const logout = () => {
         setLoggedIn(false);
         sessionStorage.removeItem('user');
-        navigate('/login')
+        navigate('/main/login')
     };
 
     return <AppContext.Provider value={{loggedIn, setLoggedIn, logout}}>

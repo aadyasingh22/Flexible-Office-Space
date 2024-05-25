@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 
 const AddSchema = Yup.object().shape({
   date: Yup.date()
-    .required('Required'),
+    .required('Required'), 
   duration: Yup.string()
     .required('Required')
 });

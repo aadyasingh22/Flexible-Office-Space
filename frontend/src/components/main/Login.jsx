@@ -68,20 +68,19 @@ function Login() {
   // }
 
   return (
-    <div>
+    <div className='h-full bg-gray-400'> 
 
 
-      <div>
-        <>
+      
           {/* component */}
           {/* Container */}
-          <div className="container mx-auto">
-            <div className="flex justify-center px-6 my-12">
+          <div className="mx-auto">
+            <div className="flex justify-center px-6 py-12">
               {/* Row */}
               <div className="w-full xl:w-3/4 lg:w-11/12 flex">
                 {/* Col */}
                 <div
-                  className="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
+                  className="w-full h-full bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
                   style={{
                     backgroundImage:
                       'url("https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")'
@@ -175,8 +174,7 @@ function Login() {
               </div>
             </div>
           </div>
-        </>
-      </div>
+        
     </div>
 
 

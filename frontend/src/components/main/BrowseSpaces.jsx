@@ -29,13 +29,6 @@ const BrowseSpaces = () => {
                 <img src={`${import.meta.env.VITE_BACKEND_URL}/` + space.image} alt="" className='my-card-img' />
 
 
-<<<<<<< HEAD
-                  <h2>{space.title}</h2>
-                  <h2>📍{space.location}</h2>
-                  <h4>{space.description}</h4>
-                  <h4>Total Area : {space.area} sq. feet</h4>
-                  <h3>₹{space.cost}</h3>
-=======
                 <div className="px-5 pb-5">
                   <a href="#">
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -50,7 +43,6 @@ const BrowseSpaces = () => {
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                       {space.area}
                     </h5>
->>>>>>> d58698996e8951f33b37988e31d1d96653d675b7
 
                   </a>
                   <div className="flex items-center mt-2.5 mb-5">
@@ -110,12 +102,11 @@ const BrowseSpaces = () => {
                       ₹{space.cost}
                     </span>
 
-                    <a
-                      href="#"
+                    <Link to={'/main/details/' + space._id}
                       className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
                       Get All Details
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

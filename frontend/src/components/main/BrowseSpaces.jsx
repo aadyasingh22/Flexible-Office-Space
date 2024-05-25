@@ -35,7 +35,7 @@ const BrowseSpaces = () => {
                   <h2>📍{space.location}</h2>
                   <h4>{space.description}</h4>
                   <h4>Total Area : {space.area} sq. feet</h4>
-                  <h3>₨ {space.cost}</h3>
+                  <h3>₹{space.cost}</h3>
 
                   <Link to={'/main/details/'+space._id} className="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600">Get all Details</Link>
 
